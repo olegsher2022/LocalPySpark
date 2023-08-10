@@ -7,7 +7,7 @@ ENV SPARK_HOME=/opt/spark
 ENV PATH=$PATH:$SPARK_HOME/bin
 ENV PATH=$PATH:$SPARK_HOME/bin
 ENV DEBIAN_FRONTEND=noninteractive
-#export DEBIAN_FRONTEND=noninteractive
+
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y dnsutils openjdk-8-jdk python3 python3-pip wget && \
@@ -23,9 +23,3 @@ RUN wget https://downloads.apache.org/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.
 
 # Set working directory
 WORKDIR /app
-
-# Copy your Python/PySpark scripts to the container
-#COPY your_script.py /app/
-
-# Run your Python/PySpark script
-#CMD ["python3", "your_script.py"]
